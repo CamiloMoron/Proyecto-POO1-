@@ -43,6 +43,8 @@ public:
 			grabarusuario.write((char*)&obj, sizeof(Usuario)); //A la hora de escribir en bin, se tiene que trabajar con cadenas de chars//
 			grabarusuario.close();
 			cout << "Usuario creado satisfactoriamente" << endl;
+			system ("pause");
+			system ("cls");
 		}
 	}
 	int leer(string usuarioporencontrar, string password)

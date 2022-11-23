@@ -21,7 +21,7 @@ public:
     void agregar(char usuario[20], char password[20], char t[2])
     {
         strcpy_s(this->username, usuario); //Me fue revelado en un sueño//
-        strcpy_s(this->password, password); //Aprendí C en un sueño lúcido//
+        strcpy_s(this->password, password); 
         strcpy_s(this->tipousuario, t);
     }
     int imprimir(string usuarioporencontrar, string passwordporencontrar)

@@ -22,7 +22,7 @@ public:
 	}
 	void add(Categoria obj)
 	{
-		vectorCategoria.push_back(obj); //Inserta los objetos de tipo Usuario al final del vector para poder seguir agregando din�micamente//
+		vectorCategoria.push_back(obj); 
 	}
 	void grabar(Categoria obj)
 	{
@@ -54,7 +54,7 @@ public:
 			stringstream stream(linea); //Convierte todos los valores almacenados en linea en un string//
 			string codCat, nomCat;
 			int codint;
-			getline(stream, codCat, limite); //Almacena el usuario en donde encuentra el usuario en el documento y contrase�a de la misma forma//
+			getline(stream, codCat, limite); 
 			getline(stream, nomCat, limite);
 			codint = stoi(codCat);
 
@@ -75,7 +75,7 @@ public:
 		}
 		while (getline(leercategoria, linea))
 		{
-			stringstream stream(linea); //Convierte todos los valores almacenados en linea en un string//
+			stringstream stream(linea); //Convierte todos los valores almacenados en linea en un string// 
 			string codcat, nombrecat;
 			int codcatint;
 			getline(stream, codcat, limite);

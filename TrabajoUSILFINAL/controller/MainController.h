@@ -93,7 +93,7 @@ public:
 			stringstream stream(linea); //Convierte todos los valores almacenados en linea en un string//
 			string usuario, producto, marca, precio, vendedor, categoria, cantidad, estado;
 			getline(stream, usuario, limite);
-			getline(stream, producto, limite); //Almacena el usuario en donde encuentra el usuario en el documento y contrase�a de la misma forma//
+			getline(stream, producto, limite); 
 			getline(stream, marca, limite);
 			getline(stream, categoria, limite);
 			getline(stream, precio, limite);
@@ -119,7 +119,7 @@ public:
 			stringstream stream(linea); //Convierte todos los valores almacenados en linea en un string//
 			string usuario, producto, marca, precio, vendedor, categoria, cantidad, estado;
 			getline(stream, usuario, limite);
-			getline(stream, producto, limite); //Almacena el usuario en donde encuentra el usuario en el documento y contrase�a de la misma forma//
+			getline(stream, producto, limite); 
 			getline(stream, marca, limite);
 			getline(stream, categoria, limite);
 			getline(stream, precio, limite);
@@ -153,7 +153,7 @@ public:
 				stringstream stream(linea); //Convierte todos los valores almacenados en linea en un string//
 				string id, producto, marca, precio, vendedor, categoria, cantidad, estado;
 				getline(stream, id, limite);
-				getline(stream, producto, limite); //Almacena el usuario en donde encuentra el usuario en el documento y contrase�a de la misma forma//
+				getline(stream, producto, limite); 
 				getline(stream, marca, limite);
 				getline(stream, categoria, limite);
 				getline(stream, precio, limite);
@@ -184,11 +184,12 @@ public:
 				stringstream stream(linea); //Convierte todos los valores almacenados en linea en un string//
 				string id, producto, marca, precio, vendedor, categoria;
 				getline(stream, id, limite);
-				getline(stream, producto, limite); //Almacena el usuario en donde encuentra el usuario en el documento y contrase�a de la misma forma//
+				getline(stream, producto, limite); 
 				getline(stream, marca, limite);
 				getline(stream, categoria, limite);
 				getline(stream, precio, limite);
 				getline(stream, vendedor, limite);
+
 				cont++;
 				cout << "ID: " << id << " Nombre: " << producto << " Categoria: " << categoria << " Marca: " << marca << " Precio : " << precio << " Vendedor : " << vendedor << endl;
 			}
@@ -200,7 +201,7 @@ public:
 				stringstream stream(linea); //Convierte todos los valores almacenados en linea en un string//
 				string id, producto, marca, precio, vendedor;
 				getline(stream, id, limite);
-				getline(stream, producto, limite); //Almacena el usuario en donde encuentra el usuario en el documento y contrase�a de la misma forma//
+				getline(stream, producto, limite); 
 				getline(stream, marca, limite);
 				getline(stream, precio, limite);
 				getline(stream, vendedor, limite);
@@ -253,7 +254,7 @@ public:
 			stringstream stream(linea); //Convierte todos los valores almacenados en linea en un string//
 			string id, producto, marca, precio, vendedor, categoria;
 			getline(stream, id, limite);
-			getline(stream, producto, limite); //Almacena el usuario en donde encuentra el usuario en el documento y contrase�a de la misma forma//
+			getline(stream, producto, limite); 
 			getline(stream, marca, limite);
 			getline(stream, categoria, limite);
 			getline(stream, precio, limite);
@@ -290,7 +291,7 @@ public:
 			stringstream stream(linea); //Convierte todos los valores almacenados en linea en un string//
 			string id, producto, marca, precio, vendedor, categoria;
 			getline(stream, id, limite);
-			getline(stream, producto, limite); //Almacena el usuario en donde encuentra el usuario en el documento y contrase�a de la misma forma//
+			getline(stream, producto, limite); 
 			getline(stream, marca, limite);
 			getline(stream, categoria, limite);
 			getline(stream, precio, limite);
@@ -320,22 +321,20 @@ public:
 			case 1:
 				cout << "Ingresar Usuario Existente: " << endl;
 				cin >> usuario;
+				system("cls");
 				cout << "Ingresar Password:          " << endl;
 				cin >> password;
 				ad = Uc.leer(usuario, password);
 				if (ad == 0)
 				{
+					system ("cls");
 					Menu();
 				}
 				if (ad == 1)
 				{
+					system("cls");
 					MenuAdmin();
 				}
-					/*el m�todo Leer de la clase UsuarioController recibe dos valores de tipo string, uno es usuario y otro contrase�a
-					en este caso como la contrse�a se guarda encriptada, se llama al metodo Desencriptar que recibe dos inputs,
-					el de la contrase�a original y la llave de desencriptaci�n, que en este caso es fija pero se puede randomizar y
-					asignar a usuarios individuales. Si el output del m�todo booleano Leer es cierto, el input del usuario es igual al
-					que se tiene guardado en el csv para ese username, dando acceso al usuario al men� de opciones de compra */
 				break;
 			case 2:
 				cout << "Ingresar Usuario Nuevo:     " << endl;
@@ -379,8 +378,6 @@ public:
 				});
 		}
 		
-		
-		
 		system("pause");
 		system("cls");
 	}
@@ -414,19 +411,26 @@ public:
 				break;
 			case 3:
 				carrito();
+				system ("cls");
 				break;
 			case 4:
+				{
 				prod.Imprimir([&](Productos p)
 					{cout << ++posicion << " | ID: " << p.getId() << " Producto: " << p.getProducto() << " Marca : " << p.getMarca() << " Precio : " << p.getPrecio() << " Vendedor : " << p.getVendedor() << " Cantidad: " << p.getCantidad() << endl; });
 				cout << "Digite el numero de orden que desea borrar: " << endl;
 				cin >> position;
 				--position;
 				prod.pop_position(position);
+				system ("pause");
+				system ("cls");
+				}
 				break;
 			case 5:
 				cout << "Buscar producto: " << endl;
 				cin >> producto;
 				buscarproducto(producto);
+				system ("pause");
+				system ("cls");
 				break;
 			case 6:
 				cout << "Producto por buscar: " << endl;
@@ -442,6 +446,8 @@ public:
 					cout << "No se encontro ningun producto en su carrito con ese nombre" << endl;
 				}
 				contadordeproductos = 0;
+				system ("pause");
+				system ("cls");
 				break;
 			default:
 				break;
@@ -456,7 +462,7 @@ public:
 			cout << "1. Listado de Productos:          " << endl;
 			cout << "2. Elegir producto:               " << endl;
 			cout << "3. Carrito de compras:            " << endl;
-			cout << "4. Agregar productos a la BD:     " << endl; //Todavía solo lo he implementado para que aparezcan como opciones, no he implementado contadores ni cambiado string categoria a int codcategira
+			cout << "4. Agregar productos a la BD:     " << endl; 
 			cout << "5. Eliminar producto del carrito: " << endl;
 			cout << "6. Buscar producto                " << endl;
 			cout << "7. Buscar producto en el carrito  " << endl;
@@ -507,6 +513,8 @@ public:
 				cin >> position;
 				--position;
 				prod.pop_position(position);
+				system ("pause");
+				system ("cls");
 				break;
 			case 6:
 				cout << "Buscar producto: " << endl;
@@ -527,6 +535,8 @@ public:
 					cout << "No se encontro ningun producto en su carrito con ese nombre" << endl;
 				}
 				contadordeproductos = 0;
+				system ("pause");
+				system ("cls");
 				break;
 			case 8:
 			{cout << "Codigo de categoria: " << endl;
@@ -545,12 +555,12 @@ public:
 				break;
 			case 10:
 				aprobarventa();
+				system ("pause");
+				system ("cls");
+				break;
 			default:
 				break;
 			}
 		} while (opc != 11);
 	}
 };
-
-//Recordar grabar la venta, guardar en csv lo que está en el carrito//
-//Agregar un "estado de venta" y la capacidad de anular ventas//

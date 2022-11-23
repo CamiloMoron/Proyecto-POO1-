@@ -45,23 +45,4 @@ public:
 		}
 		--pos;
 	}
-	/*
-	void imprimirFactura ()
-	{
-
-	}
-	void grabarFactura ()
-	{
-		ofstream grabarfactura;
-		grabarfactura.open("factura.csv", ios::app);
-		if (grabarfactura.is_open())
-		{
-			for (int i = 0; i <= pos; i++)
-			{
-				func(arr[i]);
-			}
-		}
-
-	}
-	*/ 
 };
